@@ -1,6 +1,7 @@
 package br.com.caelum.projetoespresso;
 
 import android.app.Application;
+import android.support.test.espresso.Espresso;
 import android.test.ApplicationTestCase;
 
 /**
@@ -9,5 +10,8 @@ import android.test.ApplicationTestCase;
 public class ApplicationTest extends ApplicationTestCase<Application> {
     public ApplicationTest() {
         super(Application.class);
+
+
     }
+
 }
