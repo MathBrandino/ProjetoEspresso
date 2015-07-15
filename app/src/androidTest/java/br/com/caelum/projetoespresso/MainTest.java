@@ -20,7 +20,7 @@ public class MainTest extends ActivityInstrumentationTestCase2 {
 
 
     public MainTest(Class activityClass) {
-        super(activityClass);
+        super(MainActivity.class);
     }
 
     public void testaTela(){
