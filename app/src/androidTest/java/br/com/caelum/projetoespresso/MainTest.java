@@ -7,16 +7,8 @@ import android.support.test.espresso.Espresso;
 import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.espresso.matcher.ViewMatchers;
-import android.support.test.runner.AndroidJUnit4;
 import android.test.ActivityInstrumentationTestCase2;
-import android.test.ViewAsserts;
 import android.test.suitebuilder.annotation.LargeTest;
-import android.view.View;
-
-import org.hamcrest.Matchers;
-import org.junit.runner.RunWith;
-
-import br.com.caelum.projetoespresso.MainActivity;
 
 
 /**
@@ -26,12 +18,10 @@ import br.com.caelum.projetoespresso.MainActivity;
 @LargeTest
 public class MainTest extends ActivityInstrumentationTestCase2 {
 
-    public MainTest() {
-        super(MainActivity.class);
+
+    public MainTest(Class activityClass) {
+        super(activityClass);
     }
-
-
-
 
     public void testaTela(){
         getActivity();
@@ -52,6 +42,12 @@ public class MainTest extends ActivityInstrumentationTestCase2 {
                 )
         ).perform(
                 ViewActions.typeTextIntoFocusedView("Banana")
+        );
+
+        Espresso.onView(
+                ViewMatchers.withId(R.id.botao)
+        ).perform(
+                ViewActions.click()
         );
 
 
