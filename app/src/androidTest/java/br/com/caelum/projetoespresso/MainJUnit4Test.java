@@ -20,7 +20,7 @@ public class MainJUnit4Test {
     @Rule
     public ActivityTestRule<MainActivity> mainActivityActivityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class);
 
-    public void testaTela2(){
+    public void testaTela2() {
 
         Espresso.onView(
                 ViewMatchers.withId(R.id.hello_world)

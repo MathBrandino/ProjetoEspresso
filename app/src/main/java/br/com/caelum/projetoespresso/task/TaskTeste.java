@@ -33,11 +33,11 @@ public class TaskTeste extends AsyncTask<Object, Object, String> {
 
         String u = null;
 
-        for (int i = 0; i < 900001 ; i++) {
+        for (int i = 0; i < 900001; i++) {
             u = "Tudo está ok e levou : " + i + " linhas do for";
         }
 
-        return u ;
+        return u;
     }
 
     @Override

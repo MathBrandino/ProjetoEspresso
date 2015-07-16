@@ -7,6 +7,8 @@ import android.support.test.espresso.matcher.ViewMatchers;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 
+import org.hamcrest.Matchers;
+
 
 /**
  * Created by matheus on 14/07/15.
@@ -20,7 +22,7 @@ public class MainTest extends ActivityInstrumentationTestCase2<MainActivity> {
         super(MainActivity.class);
     }
 
-    public void testaTela(){
+    public void testaTela() {
         getActivity();
 
         Espresso.onView(
@@ -56,7 +58,41 @@ public class MainTest extends ActivityInstrumentationTestCase2<MainActivity> {
 
         );
 
+    }
 
+    public void testaClick(){
+        getActivity();
 
+        Espresso.onView(
+                ViewMatchers.withId(R.id.botao)
+        ).perform(
+                ViewActions.doubleClick()
+        );
+        Espresso.onView(
+                ViewMatchers.withId(R.id.botao2)
+        ).perform(
+                ViewActions.click()
+        );
+    }
+
+    public void testeW(){
+
+        getActivity();
+
+        Espresso.onView(
+                ViewMatchers.withId(R.id.botao)
+        ).perform(
+                ViewActions.click()
+        );
+
+        Espresso.onView(
+                ViewMatchers.withText("T")
+        ).check(
+                ViewAssertions.matches(
+                        ViewMatchers.withId(R.id.botao3)
+                )
+        ).perform(
+                ViewActions.click()
+        );
     }
 }
