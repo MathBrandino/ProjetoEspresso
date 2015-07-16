@@ -4,13 +4,11 @@ package br.com.caelum.projetoespresso;
 
 
 import android.support.test.espresso.Espresso;
-import android.support.test.espresso.ViewAction;
 import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
-import android.view.View;
 
 
 /**
@@ -18,7 +16,7 @@ import android.view.View;
  */
 
 @LargeTest
-public class MainTest extends ActivityInstrumentationTestCase2 {
+public class MainTest extends ActivityInstrumentationTestCase2<MainActivity> {
 
 
     public MainTest() {
@@ -50,6 +48,19 @@ public class MainTest extends ActivityInstrumentationTestCase2 {
                 ViewMatchers.withId(R.id.botao)
         ).perform(
                 ViewActions.click()
+        );
+
+
+        Espresso.onView(
+                ViewMatchers.withId(R.id.botao2)
+        ).perform(
+                ViewActions.click()
+        );
+
+        Espresso.onView(
+                ViewMatchers.withText("Abacaxi")
+        ).check(
+                ViewAssertions.doesNotExist()
         );
 
 

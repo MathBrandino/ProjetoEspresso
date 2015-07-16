@@ -22,16 +22,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button botao = (Button) findViewById(R.id.botao);
+        final MainActivity that = this;
 
-        final EditText editText = (EditText) findViewById(R.id.edit_text);
+        Button botao = (Button) findViewById(R.id.botao);
 
         botao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  Toast.makeText(MainActivity.this, editText.getText().toString() , Toast.LENGTH_LONG).show();
                 TaskTeste taskTeste = new TaskTeste(MainActivity.this);
                 taskTeste.execute();
+
             }
         });
     }
