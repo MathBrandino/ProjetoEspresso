@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import br.com.caelum.projetoespresso.task.TaskTeste;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
         botao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, editText.getText().toString() , Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivity(intent);
+              //  Toast.makeText(MainActivity.this, editText.getText().toString() , Toast.LENGTH_LONG).show();
+                TaskTeste taskTeste = new TaskTeste(MainActivity.this);
+                taskTeste.execute();
             }
         });
     }
