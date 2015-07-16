@@ -4,15 +4,12 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-import br.com.caelum.projetoespresso.MainActivity;
 import br.com.caelum.projetoespresso.NewActivity;
-import br.com.caelum.projetoespresso.R;
 
 /**
  * Created by matheus on 16/07/15.
@@ -55,7 +52,7 @@ public class TaskTeste extends AsyncTask<Object, Object, String> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        progressDialog = ProgressDialog.show(activity, "Aguarde ...", "Procurando resultado", true, true);
+        progressDialog = ProgressDialog.show(activity, "Aguarde ...", "Procurando resultado", false, true);
     }
 
     TimerTask timerTask = new TimerTask() {

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.caelum.projetoespresso.task.TaskTeste;
@@ -27,8 +26,17 @@ public class NewActivity extends AppCompatActivity {
             public void onClick(View v) {
                 TaskTeste taskTeste = new TaskTeste(NewActivity.this);
                 taskTeste.execute();
+
             }
         });
 
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Toast.makeText(NewActivity.this, "Passando por aqui", Toast.LENGTH_LONG).show();
+
+                return true;
+            }
+        });
     }
 }

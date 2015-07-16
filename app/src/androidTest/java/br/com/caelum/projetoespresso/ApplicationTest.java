@@ -1,7 +1,6 @@
 package br.com.caelum.projetoespresso;
 
 import android.app.Application;
-import android.support.test.espresso.Espresso;
 import android.test.ApplicationTestCase;
 import android.test.suitebuilder.annotation.LargeTest;
 

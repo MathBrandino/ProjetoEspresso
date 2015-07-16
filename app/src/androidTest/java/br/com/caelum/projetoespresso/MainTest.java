@@ -1,8 +1,5 @@
 package br.com.caelum.projetoespresso;
 
-
-
-
 import android.support.test.espresso.Espresso;
 import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.assertion.ViewAssertions;
@@ -54,14 +51,11 @@ public class MainTest extends ActivityInstrumentationTestCase2<MainActivity> {
         Espresso.onView(
                 ViewMatchers.withId(R.id.botao2)
         ).perform(
+                ViewActions.longClick(),
                 ViewActions.click()
+
         );
 
-        Espresso.onView(
-                ViewMatchers.withText("Abacaxi")
-        ).check(
-                ViewAssertions.doesNotExist()
-        );
 
 
     }
