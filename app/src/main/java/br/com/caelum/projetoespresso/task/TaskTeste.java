@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import java.sql.Time;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -19,25 +20,26 @@ public class TaskTeste extends AsyncTask<Object, Object, String> {
     private Activity activity;
     private ProgressDialog progressDialog;
 
-
     public TaskTeste(Activity activity) {
         this.activity = activity;
     }
 
-
     @Override
     protected String doInBackground(Object... params) {
 
-        Timer timer = new Timer();
-        timer.schedule(timerTask, 999999999);
+        final int[] u = new int[1];
 
-        String u = null;
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 999999999 ; i++) {
+                    u[0] = i;
+                }
+            }
+        };
+        timerTask.run();
 
-        for (int i = 0; i < 900001; i++) {
-            u = "Tudo está ok e levou : " + i + " linhas do for";
-        }
-
-        return u;
+        return String.valueOf(u[0]);
     }
 
     @Override
@@ -54,11 +56,4 @@ public class TaskTeste extends AsyncTask<Object, Object, String> {
         super.onPreExecute();
         progressDialog = ProgressDialog.show(activity, "Aguarde ...", "Procurando resultado", false, true);
     }
-
-    TimerTask timerTask = new TimerTask() {
-        @Override
-        public void run() {
-
-        }
-    };
 }
