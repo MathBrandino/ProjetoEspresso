@@ -45,8 +45,9 @@ public class TaskTeste extends AsyncTask<Object, Object, String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        Toast.makeText(activity, s, Toast.LENGTH_LONG).show();
+
         progressDialog.dismiss();
+
         Intent intent = new Intent(activity, NewActivity.class);
         activity.startActivity(intent);
     }

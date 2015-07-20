@@ -15,4 +15,10 @@
         android:id="@+id/botao3"
         android:text="T"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/botao4"
+        android:text="Botao4"/>
+
 </LinearLayout>

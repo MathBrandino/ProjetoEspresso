@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
 import br.com.caelum.projetoespresso.task.TaskTeste;
 
@@ -28,6 +30,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        ListView listView = (ListView) findViewById(R.id.lista);
+
+        String [] nomes = { "Matheus", " Joaquim", "Pedro", "Carlos", "Arroz","Abacaxi", "?", "!", "Feijao", "Miguel", "Bela", "Cristiano"};
+
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,nomes);
+
+        listView.setAdapter(adapter);
     }
 
     @Override

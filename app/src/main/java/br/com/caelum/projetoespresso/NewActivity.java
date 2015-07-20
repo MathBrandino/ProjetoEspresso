@@ -26,6 +26,7 @@ public class NewActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 TaskTeste taskTeste = new TaskTeste(NewActivity.this);
                 taskTeste.execute();
 
