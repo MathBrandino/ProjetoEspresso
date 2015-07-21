@@ -5,9 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import br.com.caelum.projetoespresso.task.TaskTeste;
 
@@ -33,11 +39,25 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.lista);
 
-        String [] nomes = { "Matheus", " Joaquim", "Pedro", "Carlos", "Arroz","Abacaxi", "?", "!", "Feijao", "Miguel", "Bela", "Cristiano"};
+        final List<String> nomes = new ArrayList<String>();
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,nomes);
+        final String [] nome = { "Matheus", " Joaquim", "Pedro", "Carlos", "Arroz","Abacaxi", "?", "!", "Feijao", "Miguel", "Bela", "Cristiano"};
+
+        Collections.addAll(nomes, nome);
+
+        final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,nomes);
 
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                nomes.remove(position);
+                adapter.notifyDataSetChanged();
+
+            }
+        });
     }
 
     @Override
